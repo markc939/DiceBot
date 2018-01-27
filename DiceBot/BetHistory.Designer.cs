@@ -45,6 +45,19 @@
             this.cmbView = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvBets = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.highDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.chanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rollDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.verifiedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.nonceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientseedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serverseedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serverhashDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.betBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnlSearch = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblSearchDateUntill = new System.Windows.Forms.Label();
@@ -73,26 +86,13 @@
             this.chkChance = new System.Windows.Forms.CheckBox();
             this.chkBetId = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.highDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.chanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rollDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.profitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.verifiedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.nonceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientseedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serverseedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serverhashDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.betBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBets)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.betBindingSource)).BeginInit();
             this.pnlSearch.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.betBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -113,7 +113,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1438, 56);
+            this.panel1.Size = new System.Drawing.Size(1436, 56);
             this.panel1.TabIndex = 0;
             // 
             // cmbJumpTo
@@ -121,7 +121,7 @@
             this.cmbJumpTo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbJumpTo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbJumpTo.FormattingEnabled = true;
-            this.cmbJumpTo.Location = new System.Drawing.Point(1368, 22);
+            this.cmbJumpTo.Location = new System.Drawing.Point(1366, 22);
             this.cmbJumpTo.Name = "cmbJumpTo";
             this.cmbJumpTo.Size = new System.Drawing.Size(58, 21);
             this.cmbJumpTo.TabIndex = 12;
@@ -131,7 +131,7 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1317, 26);
+            this.label5.Location = new System.Drawing.Point(1315, 26);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 13);
             this.label5.TabIndex = 11;
@@ -140,7 +140,7 @@
             // btnNext
             // 
             this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNext.Location = new System.Drawing.Point(1236, 21);
+            this.btnNext.Location = new System.Drawing.Point(1234, 21);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
             this.btnNext.TabIndex = 10;
@@ -151,7 +151,7 @@
             // btnPrevious
             // 
             this.btnPrevious.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrevious.Location = new System.Drawing.Point(1155, 21);
+            this.btnPrevious.Location = new System.Drawing.Point(1153, 21);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(75, 23);
             this.btnPrevious.TabIndex = 9;
@@ -171,7 +171,7 @@
             "100",
             "250",
             "500"});
-            this.cmbViewPerPage.Location = new System.Drawing.Point(1101, 22);
+            this.cmbViewPerPage.Location = new System.Drawing.Point(1099, 22);
             this.cmbViewPerPage.Name = "cmbViewPerPage";
             this.cmbViewPerPage.Size = new System.Drawing.Size(48, 21);
             this.cmbViewPerPage.TabIndex = 8;
@@ -181,7 +181,7 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1015, 26);
+            this.label4.Location = new System.Drawing.Point(1013, 26);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 13);
             this.label4.TabIndex = 7;
@@ -287,8 +287,96 @@
             this.dgvBets.Location = new System.Drawing.Point(0, 235);
             this.dgvBets.Name = "dgvBets";
             this.dgvBets.ReadOnly = true;
-            this.dgvBets.Size = new System.Drawing.Size(1438, 178);
+            this.dgvBets.Size = new System.Drawing.Size(1436, 178);
             this.dgvBets.TabIndex = 1;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Bet ID";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // highDataGridViewCheckBoxColumn
+            // 
+            this.highDataGridViewCheckBoxColumn.DataPropertyName = "high";
+            this.highDataGridViewCheckBoxColumn.HeaderText = "high";
+            this.highDataGridViewCheckBoxColumn.Name = "highDataGridViewCheckBoxColumn";
+            this.highDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // chanceDataGridViewTextBoxColumn
+            // 
+            this.chanceDataGridViewTextBoxColumn.DataPropertyName = "Chance";
+            this.chanceDataGridViewTextBoxColumn.HeaderText = "Chance";
+            this.chanceDataGridViewTextBoxColumn.Name = "chanceDataGridViewTextBoxColumn";
+            this.chanceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Stake";
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rollDataGridViewTextBoxColumn
+            // 
+            this.rollDataGridViewTextBoxColumn.DataPropertyName = "Roll";
+            this.rollDataGridViewTextBoxColumn.HeaderText = "Roll";
+            this.rollDataGridViewTextBoxColumn.Name = "rollDataGridViewTextBoxColumn";
+            this.rollDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // profitDataGridViewTextBoxColumn
+            // 
+            this.profitDataGridViewTextBoxColumn.DataPropertyName = "Profit";
+            this.profitDataGridViewTextBoxColumn.HeaderText = "Profit";
+            this.profitDataGridViewTextBoxColumn.Name = "profitDataGridViewTextBoxColumn";
+            this.profitDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // verifiedDataGridViewCheckBoxColumn
+            // 
+            this.verifiedDataGridViewCheckBoxColumn.DataPropertyName = "Verified";
+            this.verifiedDataGridViewCheckBoxColumn.HeaderText = "Verified";
+            this.verifiedDataGridViewCheckBoxColumn.Name = "verifiedDataGridViewCheckBoxColumn";
+            this.verifiedDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // nonceDataGridViewTextBoxColumn
+            // 
+            this.nonceDataGridViewTextBoxColumn.DataPropertyName = "nonce";
+            this.nonceDataGridViewTextBoxColumn.HeaderText = "nonce";
+            this.nonceDataGridViewTextBoxColumn.Name = "nonceDataGridViewTextBoxColumn";
+            this.nonceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clientseedDataGridViewTextBoxColumn
+            // 
+            this.clientseedDataGridViewTextBoxColumn.DataPropertyName = "clientseed";
+            this.clientseedDataGridViewTextBoxColumn.HeaderText = "clientseed";
+            this.clientseedDataGridViewTextBoxColumn.Name = "clientseedDataGridViewTextBoxColumn";
+            this.clientseedDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // serverseedDataGridViewTextBoxColumn
+            // 
+            this.serverseedDataGridViewTextBoxColumn.DataPropertyName = "serverseed";
+            this.serverseedDataGridViewTextBoxColumn.HeaderText = "serverseed";
+            this.serverseedDataGridViewTextBoxColumn.Name = "serverseedDataGridViewTextBoxColumn";
+            this.serverseedDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // serverhashDataGridViewTextBoxColumn
+            // 
+            this.serverhashDataGridViewTextBoxColumn.DataPropertyName = "serverhash";
+            this.serverhashDataGridViewTextBoxColumn.HeaderText = "serverhash";
+            this.serverhashDataGridViewTextBoxColumn.Name = "serverhashDataGridViewTextBoxColumn";
+            this.serverhashDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // betBindingSource
+            // 
+            this.betBindingSource.DataSource = typeof(DiceBot.Bet);
             // 
             // pnlSearch
             // 
@@ -310,7 +398,7 @@
             this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSearch.Location = new System.Drawing.Point(0, 56);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(1438, 179);
+            this.pnlSearch.Size = new System.Drawing.Size(1436, 179);
             this.pnlSearch.TabIndex = 2;
             this.pnlSearch.TabStop = false;
             this.pnlSearch.Text = "Search";
@@ -592,99 +680,11 @@
             this.label6.TabIndex = 17;
             this.label6.Text = "Search in:";
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Bet ID";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // highDataGridViewCheckBoxColumn
-            // 
-            this.highDataGridViewCheckBoxColumn.DataPropertyName = "high";
-            this.highDataGridViewCheckBoxColumn.HeaderText = "high";
-            this.highDataGridViewCheckBoxColumn.Name = "highDataGridViewCheckBoxColumn";
-            this.highDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // chanceDataGridViewTextBoxColumn
-            // 
-            this.chanceDataGridViewTextBoxColumn.DataPropertyName = "Chance";
-            this.chanceDataGridViewTextBoxColumn.HeaderText = "Chance";
-            this.chanceDataGridViewTextBoxColumn.Name = "chanceDataGridViewTextBoxColumn";
-            this.chanceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // amountDataGridViewTextBoxColumn
-            // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Stake";
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // rollDataGridViewTextBoxColumn
-            // 
-            this.rollDataGridViewTextBoxColumn.DataPropertyName = "Roll";
-            this.rollDataGridViewTextBoxColumn.HeaderText = "Roll";
-            this.rollDataGridViewTextBoxColumn.Name = "rollDataGridViewTextBoxColumn";
-            this.rollDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // profitDataGridViewTextBoxColumn
-            // 
-            this.profitDataGridViewTextBoxColumn.DataPropertyName = "Profit";
-            this.profitDataGridViewTextBoxColumn.HeaderText = "Profit";
-            this.profitDataGridViewTextBoxColumn.Name = "profitDataGridViewTextBoxColumn";
-            this.profitDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // verifiedDataGridViewCheckBoxColumn
-            // 
-            this.verifiedDataGridViewCheckBoxColumn.DataPropertyName = "Verified";
-            this.verifiedDataGridViewCheckBoxColumn.HeaderText = "Verified";
-            this.verifiedDataGridViewCheckBoxColumn.Name = "verifiedDataGridViewCheckBoxColumn";
-            this.verifiedDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // nonceDataGridViewTextBoxColumn
-            // 
-            this.nonceDataGridViewTextBoxColumn.DataPropertyName = "nonce";
-            this.nonceDataGridViewTextBoxColumn.HeaderText = "nonce";
-            this.nonceDataGridViewTextBoxColumn.Name = "nonceDataGridViewTextBoxColumn";
-            this.nonceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // clientseedDataGridViewTextBoxColumn
-            // 
-            this.clientseedDataGridViewTextBoxColumn.DataPropertyName = "clientseed";
-            this.clientseedDataGridViewTextBoxColumn.HeaderText = "clientseed";
-            this.clientseedDataGridViewTextBoxColumn.Name = "clientseedDataGridViewTextBoxColumn";
-            this.clientseedDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // serverseedDataGridViewTextBoxColumn
-            // 
-            this.serverseedDataGridViewTextBoxColumn.DataPropertyName = "serverseed";
-            this.serverseedDataGridViewTextBoxColumn.HeaderText = "serverseed";
-            this.serverseedDataGridViewTextBoxColumn.Name = "serverseedDataGridViewTextBoxColumn";
-            this.serverseedDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // serverhashDataGridViewTextBoxColumn
-            // 
-            this.serverhashDataGridViewTextBoxColumn.DataPropertyName = "serverhash";
-            this.serverhashDataGridViewTextBoxColumn.HeaderText = "serverhash";
-            this.serverhashDataGridViewTextBoxColumn.Name = "serverhashDataGridViewTextBoxColumn";
-            this.serverhashDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // betBindingSource
-            // 
-            this.betBindingSource.DataSource = typeof(DiceBot.Bet);
-            // 
             // BetHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1438, 413);
+            this.ClientSize = new System.Drawing.Size(1436, 413);
             this.Controls.Add(this.dgvBets);
             this.Controls.Add(this.pnlSearch);
             this.Controls.Add(this.panel1);
@@ -694,6 +694,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBets)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.betBindingSource)).EndInit();
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -702,7 +703,6 @@
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.betBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
