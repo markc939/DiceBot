@@ -55,7 +55,10 @@ namespace DiceBot
         decimal WinMultiplier = 0;
         decimal Limit = 0;
         decimal Amount = 0;
-        
+
+        string pause = "false";
+        int pauselength = 0;
+
         decimal LargestBet = 0;
         decimal LargestWin = 0;
         decimal LargestLoss = 0;
@@ -2715,9 +2718,30 @@ namespace DiceBot
                 bool Win = (((bool)bet.high ? (decimal)bet.Roll> (decimal)CurrentSite.maxRoll - (decimal)(bet.Chance) : (decimal)bet.Roll < (decimal)(bet.Chance)));
             
                 SetLuaVars();
+
+
+                Lua["roll"] = bet.Roll;
                 Lua["win"] = Win;
                 Lua["currentprofit"] = ((decimal)(bet.Profit * 100000000m)) / 100000000.0m;
                 Lua["lastBet"] = bet;
+                LuaRuntime.SetLua(Lua);
+                LuaRuntime.Run("dobet()");
+                GetLuaVars();
+
+                if (Lua.GetString("pause") != null)
+                {
+                    if (Lua["pause"].ToString() == "true")
+                    {
+                        int pauselength = Convert.ToInt16(Lua["pauselength"]) * 1000;
+                        System.Threading.Thread.Sleep(pauselength);
+                    }
+                }
+                else
+                {
+                    Lua["pause"] = "false";
+                    Lua["pauselength"] = 0;
+                }
+
                 LuaRuntime.SetLua(Lua);
                 LuaRuntime.Run("dobet()");
                 GetLuaVars();
@@ -4400,7 +4424,12 @@ namespace DiceBot
                 StartBalance = tmp;
             Winstreak = Losestreak = BestStreak = WorstStreak = laststreaklose = laststreakwin =   BestStreak2 = WorstStreak2 = BestStreak3 = WorstStreak3 = numstreaks = numwinstreasks = numlosesreaks = 0;
             avgloss = avgstreak = LargestBet = LargestLoss = LargestWin = avgwin = 0.0m;
-            TotalTime += (DateTime.Now - dtStarted);
+//            TotalTime += (DateTime.Now - dtStarted);
+
+            // nasty hack lol 
+            TotalTime = DateTime.Now - DateTime.Now;
+
+
             dtStarted = DateTime.Now;
             UpdateStats();
             wagered = 0;
@@ -5804,6 +5833,9 @@ namespace DiceBot
                     CurrentSite.Currency = (string)Lua["currency"];
                 EnableReset = (bool)Lua["enablersc"];
                 EnableProgZigZag = (bool)Lua["enablezz"];
+
+                pause = (string)Lua["pause"];
+                pauselength = (int)Lua["pauselength"];
             }
             catch (Exception e)
             {
@@ -5832,7 +5864,9 @@ namespace DiceBot
                         SetLuaVars();
                         LuaRuntime.Run(richTextBox3.Text);
                         GetLuaVars();
-                        
+
+                        resetstats();
+
                         Start(false);
                     }
                     catch (Exception ex)
