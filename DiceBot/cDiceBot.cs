@@ -2742,9 +2742,6 @@ namespace DiceBot
                     Lua["pauselength"] = 0;
                 }
 
-                LuaRuntime.SetLua(Lua);
-                LuaRuntime.Run("dobet()");
-                GetLuaVars();
                 if ((Wins+Losses)%100==0)
                 {
                     LuaRuntime.Run("collectgarbage()");
