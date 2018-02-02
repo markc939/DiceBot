@@ -4,7 +4,7 @@
   <description asmv2:iconFile="logo.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="DiceBot" version="3.2.1.0" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="DiceBot" version="3.3.12.0" language="neutral" processorArchitecture="msil" />
     <commandLine file="DiceBot.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,26 +43,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DiceBot.exe" size="926208">
-      <assemblyIdentity name="DiceBot" version="3.2.1.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DiceBot.exe" size="1135104">
+      <assemblyIdentity name="DiceBot" version="3.3.12.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>XJWnQh6PyWFGjnjiYTIbbqqz+xC74w6Ky+Lb5l8uF8Q=</dsig:DigestValue>
+        <dsig:DigestValue>512Li2IUcoYlJrchseNAzp59s7oMjceHQQDuqJ1QG4Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="JDCAPI.dll" size="103424">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="JDCAPI.dll" size="103936">
       <assemblyIdentity name="JDCAPI" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Ue54scUXne28a2Lz+LNR3hHKE5RvTk/l/EPME0iIMXU=</dsig:DigestValue>
+        <dsig:DigestValue>Q+Ynwd03+9mK5cFBnKBfFQ1nNGXs9hI4cQUYpspTkMM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -75,6 +75,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>XUiHDCFVRJ5n3ZgSU/bxbrZS6FuP+di57AhDg2CAWFg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NBitcoin.dll" size="1358336">
+      <assemblyIdentity name="NBitcoin" version="3.0.2.4" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>O5RbAf3bexAaBYp3bFu6uvH1ZeeN2/m6gZUBYtcTa8s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -139,6 +151,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TwoStepsAuthenticator.dll" size="10752">
+      <assemblyIdentity name="TwoStepsAuthenticator" version="1.1.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>zgVOEoMzzMtPy1EaDG2dC6FEIX99wadgb2J3cfl+6l4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WebSocket4Net.dll" size="60416">
       <assemblyIdentity name="WebSocket4Net" version="0.14.1.0" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -150,13 +174,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="DiceBot.exe.config" size="1379">
+  <file name="DiceBot.exe.config" size="1873">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>V4qqjZG4bHsW2AoNJ0tcdLI9t9rlY+603G3nPgwsFFY=</dsig:DigestValue>
+      <dsig:DigestValue>xf9muZSYjv4Vub/ZBLRp28cUZnCYW5w7QuCQ0BFwXJk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="logo.ico" size="165662">

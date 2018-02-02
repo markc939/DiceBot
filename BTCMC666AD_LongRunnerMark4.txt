@@ -1,0 +1,179 @@
+-- dicebot changes -> cDiceBot.cs parseScript and GetLuaVars for roll value and pause
+-- 
+
+-- changeable 
+pauselength="10"	
+betmax=10000
+betpause=200
+takeprofit=0.0009
+--
+
+-- take care if not using spreadsheet
+requiredprofit1 = 0.00000001
+requiredprofit2 = 0.00000000
+requiredprofit3 = 0.00000000
+--
+
+-- do not change
+basebet=0.00000001
+chance=49.5
+chance14=14.86
+chance49=49.5
+nextbet=basebet
+bethigh=true 
+enablezz=false --set to true to use high/low switching 
+enablesrc=false --set to true to use stop/reset conditions 
+-- end do not change
+
+-- program/algorithm variables - do not change.
+myloss = 0
+mybets = 0
+myprofit=0
+mybiggestloss = 0
+mybiggeststreak=0
+mybiggestsimstreak=0
+simlosses = 0
+streaksabove1 = 0
+streaksabove10 = 0
+streaksabove20 = 0
+streaksabove30 = 0
+streaksabove40 = 0
+streaksabove50 = 0
+streaksabove60 = 0
+streaksabove70 = 0
+-- end program variables - do not change.
+
+function dobet()
+
+  mybets = mybets+1
+
+  if bets > betmax then
+    if win then
+       myloss = 0
+       print ("Stopping at betmax, Profit: \t" .. profit*100000000)
+       resetstats()
+       stop()
+     end 
+  end
+
+
+  currentslot = (currentstreak*-1)+1
+  if currentslot < 1 then
+     currentslot=1 
+  end
+
+  print ("===============================================") 
+
+  print ("Dice Roll: \t\t" .. roll) 
+  if roll <= 85.13
+  then
+	simlosses = simlosses + 1
+        print ("85.13 Loss Streak: \t\t" .. simlosses) 
+
+	if simlosses == 70
+ 	then
+           streaksabove70=streaksabove70+1
+	   streaksabove60=streaksabove60-1	
+	elseif simlosses == 60
+	then
+            streaksabove60=streaksabove60+1	
+            streaksabove50=streaksabove50-1	
+	elseif simlosses == 50
+	then
+	    streaksabove50=streaksabove50+1
+            streaksabove40=streaksabove40-1	
+	elseif simlosses == 40
+	then
+	    streaksabove40=streaksabove40+1
+            streaksabove30=streaksabove30-1	
+	elseif simlosses == 30
+	then
+	    streaksabove30=streaksabove30+1
+            streaksabove20=streaksabove20-1	
+	elseif simlosses == 20
+	then
+	    streaksabove20=streaksabove20+1
+            streaksabove10=streaksabove10-1	
+	elseif simlosses == 10
+	then
+	    streaksabove10=streaksabove10+1
+            streaksabove1=streaksabove1-1
+	elseif simlosses == 1
+	then
+	    streaksabove1=streaksabove1+1
+	end
+  else
+	print ("85.13 Win") 
+	simlosses = 0
+  end
+
+  if simlosses > mybiggestsimstreak
+  then
+      mybiggestsimstreak=simlosses
+  end
+ 
+
+  print ("Number of bets: \t\t" .. bets .. " out of " .. betmax) 
+  print ("Pausing after each: \t\t" .. betpause)
+  print ("Current Profit: \t\t" .. profit*100000000)
+  print ("85.13 Biggest Streak: \t" .. mybiggestsimstreak)
+
+  print ("Streaks below 10: \t\t" .. streaksabove1)
+  print ("Streaks above 10: \t\t" .. streaksabove10)
+  print ("Streaks above 20: \t\t" .. streaksabove20)
+  print ("Streaks above 30: \t\t" .. streaksabove30)
+  print ("Streaks above 40: \t\t" .. streaksabove40)
+  print ("Streaks above 50: \t\t" .. streaksabove50)
+  print ("Streaks above 60: \t\t" .. streaksabove60)
+  print ("Streaks above 70: \t\t" .. streaksabove70)
+
+
+  if win then
+      if chance == chance14
+      then
+       if profit > 0.00005
+       then
+  	 stop()
+       end
+    end
+  
+    pause="false"
+    myloss = 0
+    nextbet=basebet
+    if profit > takeprofit then
+      print ("Profit Stop: \t\t" .. profit*100000000)
+      resetstats()
+      stop()
+    end
+
+    if(mybets > betpause) then
+      print ("Pausing at bet: \t\t" .. bets)
+      pause="true"
+      mybets = 0
+    end 
+  else
+    pause="false"	
+    myloss = myloss + previousbet
+    if (myloss*100000000) > mybiggestloss then
+      mybiggestloss = myloss*100000000
+    end
+
+    if currentslot > mybiggeststreak then
+      mybiggeststreak = currentslot
+    end
+    myprofit+=currentprofit
+   end
+
+    if simlosses > 11
+    then
+      chance = chance14
+      nextbet = (myloss/5.6622) 
+    else
+      chance = chance14
+      nextbet = (myloss/5.6622) + requiredprofit1
+    end
+
+ -- print ("MyLoss: \t\t\t" .. myloss*100000000)
+  print ("Nextbet: \t\t\t" .. nextbet*100000000)
+  print ("===============================================") 
+end 
