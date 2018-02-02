@@ -3,7 +3,7 @@
 
 -- changeable 
 pauselength="8"	
-betmax=15000
+betmax=7000
 betpause=211
 takeprofit=0.0001
 --
@@ -160,7 +160,7 @@ function dobet()
     then
       chance = chance14
       nextbet = (myloss/5.6622) + requiredprofit3
-    elseif simlosses > 24
+    elseif simlosses > 26
     then
       chance = chance14
       nextbet = (myloss/5.6622) + requiredprofit2

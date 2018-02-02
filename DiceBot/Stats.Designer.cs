@@ -398,7 +398,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(478, 244);
+            this.tabPage7.Size = new System.Drawing.Size(521, 244);
             this.tabPage7.TabIndex = 0;
             this.tabPage7.Text = "Stats";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -694,14 +694,14 @@
             this.tcStats.Location = new System.Drawing.Point(0, 0);
             this.tcStats.Name = "tcStats";
             this.tcStats.SelectedIndex = 0;
-            this.tcStats.Size = new System.Drawing.Size(486, 270);
+            this.tcStats.Size = new System.Drawing.Size(529, 270);
             this.tcStats.TabIndex = 15;
             // 
             // Stats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(486, 270);
+            this.ClientSize = new System.Drawing.Size(529, 270);
             this.Controls.Add(this.tcStats);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Stats";

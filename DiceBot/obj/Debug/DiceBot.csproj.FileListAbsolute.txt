@@ -137,6 +137,7 @@ C:\Users\markc\Documents\GitHub\DiceBot\DiceBot\obj\Debug\DiceBot.StreakTable.re
 C:\Users\markc\Documents\GitHub\DiceBot\DiceBot\obj\Debug\DiceBot.UserInput.resources
 C:\Users\markc\Documents\GitHub\DiceBot\DiceBot\obj\Debug\DiceBot.Verify.resources
 C:\Users\markc\Documents\GitHub\DiceBot\DiceBot\obj\Debug\DiceBot.csproj.GenerateResource.Cache
+C:\Users\markc\Documents\GitHub\DiceBot\DiceBot\obj\Debug\DiceBot.csproj.CoreCompileInputs.cache
 C:\Users\markc\Documents\GitHub\DiceBot\DiceBot\obj\Debug\DiceBot.TrustInfo.xml
 C:\Users\markc\Documents\GitHub\DiceBot\DiceBot\obj\Debug\DiceBot.exe.manifest
 C:\Users\markc\Documents\GitHub\DiceBot\DiceBot\obj\Debug\DiceBot.application

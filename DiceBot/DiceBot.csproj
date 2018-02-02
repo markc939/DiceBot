@@ -205,6 +205,7 @@
     <Compile Include="Bitvest.cs" />
     <Compile Include="DuckDice.cs" />
     <Compile Include="Freebitcoin.cs" />
+    <Compile Include="BTCRate.cs" />
     <Compile Include="Kingdice.cs" />
     <Compile Include="LoginFailedForm.cs">
       <SubType>Form</SubType>

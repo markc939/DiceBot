@@ -14,6 +14,9 @@ namespace DiceBot
         public Stats()
         {
             InitializeComponent();
+
+            // MARKC
+            this.Text = this.Text + " BTC Rate $" + DiceBot.BTCRate.GetRate().ToString();
         }
 
         protected override void OnClosing(CancelEventArgs e)
