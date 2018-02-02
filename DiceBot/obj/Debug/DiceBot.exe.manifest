@@ -4,7 +4,7 @@
   <description asmv2:iconFile="logo.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="DiceBot" version="3.3.9.0" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="DiceBot" version="3.3.12.0" language="neutral" processorArchitecture="msil" />
     <commandLine file="DiceBot.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DiceBot.exe" size="1131520">
-      <assemblyIdentity name="DiceBot" version="3.3.9.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DiceBot.exe" size="1135104">
+      <assemblyIdentity name="DiceBot" version="3.3.12.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>85VeaZAyJup+H+Ynf5EMeA2HVPA6X2Rrsq6iLg4R1YU=</dsig:DigestValue>
+        <dsig:DigestValue>b9pKmTH3gyNdp7kXzVJOXSnKroGhb75baB3uG7zYZCM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
