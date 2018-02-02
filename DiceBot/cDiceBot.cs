@@ -208,11 +208,14 @@ namespace DiceBot
             wagered += (decimal)bet.Amount;
             bool Win = (((bool)bet.high ? (decimal)bet.Roll > (decimal)CurrentSite.maxRoll - (decimal)(bet.Chance) : (decimal)bet.Roll < (decimal)(bet.Chance)));
             
-            if (!RunningSimulation)
-            {
+
+            // MARKC
+            //if (!RunningSimulation)
+            //{
                 
                 new Thread(new ParameterizedThreadStart(AddChartPoint)).Start(Win);
-            }
+            //}
+
             if (InvokeRequired)
             {
                 Invoke(new dDobet(DoBet),bet);
@@ -1080,9 +1083,9 @@ namespace DiceBot
                         // MARKC
                         try
                         {
-                            lblProfit2.Text = StatsWindows.lblProfit.Text = profit.ToString("0.00000000") + " $" + Math.Round(cDiceBot.BTCRate * profit, 2).ToString();
-                            StatsWindows.lblWagered.Text = wagered.ToString("0.00000000") + " $" + Math.Round(cDiceBot.BTCRate * wagered, 2).ToString();
-                            StatsWindows.lblBalance.Text = PreviousBalance.ToString("0.00000000") + " $" + Math.Round(cDiceBot.BTCRate * PreviousBalance, 2).ToString();
+                            lblProfit2.Text = StatsWindows.lblProfit.Text = profit.ToString("0.00000000") + " $" + Math.Round(cDiceBot.BTCRate * profit, 2).ToString("00.00");
+                            StatsWindows.lblWagered.Text = wagered.ToString("0.00000000") + " $" + Math.Round(cDiceBot.BTCRate * wagered, 2).ToString("00.00");
+                            StatsWindows.lblBalance.Text = PreviousBalance.ToString("0.00000000") + " $" + Math.Round(cDiceBot.BTCRate * PreviousBalance, 2).ToString("00.00");
                         }
                         catch(Exception ex)
                         {
@@ -1142,8 +1145,8 @@ namespace DiceBot
                         if (profpB > 0 && betsps > 0)
                             profph = (profpB * betsps) * 60.0m * 60.0m;
                         StatsWindows.lblProfpb.Text = profpB.ToString("0.00000000");
-                        StatsWindows.lblProfitph.Text = (profph.ToString("0.00000000"));
-                        StatsWindows.lblProfit24.Text = (profph* 24.0m).ToString("0.00000000");
+                        StatsWindows.lblProfitph.Text = (profph.ToString("0.00000000")) + " $" + Math.Round(cDiceBot.BTCRate * profph, 2).ToString("00.00"); 
+                        StatsWindows.lblProfit24.Text = (profph* 24.0m).ToString("0.00000000") + " $" + Math.Round(cDiceBot.BTCRate * profph * 24.0m, 2).ToString("00.00"); 
 
                         int imaxbets = maxbets();
                         if (imaxbets == -500)
