@@ -106,6 +106,10 @@ namespace DiceBot
         bool running = false;
         bool stoponwin = false;
 
+
+        // MARKC
+        static Decimal BTCRate = 0;
+
         #region settings vars
         public bool tray = false;
         public bool Sound = true;
@@ -718,6 +722,12 @@ namespace DiceBot
             Lua.RegisterFunction("ching", this, new dPlayChing(PlayChing).Method);
             Lua.RegisterFunction("resetbuiltin", this, new dPlayChing(Reset).Method);
             Lua.RegisterFunction("exportsim", this, new dPlayChing(ExportSim).Method);
+
+
+
+            //MARKC
+            BTCRate = DiceBot.BTCRate.GetRate();
+
             DumpLog("constructor done", 8);
         }
         void luaStop()
@@ -1037,7 +1047,7 @@ namespace DiceBot
         delegate void dUpdateStats();
         private void UpdateStats()
         {
-            
+            // MARKC
             if (InvokeRequired)
             {
                 Invoke(new dUpdateStats(UpdateStats));
@@ -1067,10 +1077,18 @@ namespace DiceBot
                         StatsWindows.lblLoseStreak.Text = WorstStreak.ToString();
                         lblLosses2.Text = StatsWindows.lblLosses.Text = Losses.ToString();
 
+                        // MARKC
+                        try
+                        {
+                            lblProfit2.Text = StatsWindows.lblProfit.Text = profit.ToString("0.00000000") + " $" + Math.Round(cDiceBot.BTCRate * profit, 2).ToString();
+                            StatsWindows.lblWagered.Text = wagered.ToString("0.00000000") + " $" + Math.Round(cDiceBot.BTCRate * wagered, 2).ToString();
+                            StatsWindows.lblBalance.Text = PreviousBalance.ToString("0.00000000") + " $" + Math.Round(cDiceBot.BTCRate * PreviousBalance, 2).ToString();
+                        }
+                        catch(Exception ex)
+                        {
+                            // throw it away! just don't want it to crash.
+                        }
 
-                        lblProfit2.Text = StatsWindows.lblProfit.Text = profit.ToString("0.00000000");
-                        StatsWindows.lblWagered.Text = wagered.ToString("0.00000000");
-                        StatsWindows.lblBalance.Text = PreviousBalance.ToString("0.00000000");
                         if (profit < 0)
                         {
                             StatsWindows.lblProfit.ForeColor = Color.Red;
@@ -2622,7 +2640,8 @@ namespace DiceBot
 
                 try
                 {
-                   if (!RunningSimulation)
+                    // MARKC
+         //          if (!RunningSimulation)
                     UpdateStats();
                 }
                 catch (Exception e)
