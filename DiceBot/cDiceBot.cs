@@ -947,6 +947,7 @@ namespace DiceBot
         //check if the current version of the bot is the latest version available
         void getversion()
         {
+            return;
             try
             {
                 HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("https://bot.seuntjie.com/Dicebot/vs.html?vers="+vers);
