@@ -11,12 +11,15 @@ namespace DiceBot
 {
     public partial class Stats : Form
     {
+        public  bool showRate = true;
+
         public Stats()
         {
             InitializeComponent();
 
             // MARKC
-            this.Text = this.Text + " BTC Rate $" + DiceBot.BTCRate.GetRate().ToString();
+            cDiceBot.updateRate();
+            this.Text = "Stats BTC Rate $" + DiceBot.BTCRate.GetRate().ToString();
         }
 
         protected override void OnClosing(CancelEventArgs e)
@@ -44,6 +47,16 @@ namespace DiceBot
         {
 
         }
-        
+
+        private void btnUpdateRate_Click(object sender, EventArgs e)
+        {
+            cDiceBot.updateRate();
+            this.Text = "Stats BTC Rate $" + DiceBot.BTCRate.GetRate().ToString();
+        }
+
+        private void btnShowDollar_Click(object sender, EventArgs e)
+        {
+            showRate = !showRate;
+        }
     }
 }

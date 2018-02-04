@@ -733,6 +733,13 @@ namespace DiceBot
 
             DumpLog("constructor done", 8);
         }
+
+        public static void updateRate()
+        {
+            BTCRate = DiceBot.BTCRate.GetRate();
+        }
+
+
         void luaStop()
         {
             Stop("Lua stop command issued");
@@ -1083,11 +1090,21 @@ namespace DiceBot
                         // MARKC
                         try
                         {
-                            lblProfit2.Text = StatsWindows.lblProfit.Text = profit.ToString("0.00000000") + " $" + Math.Round(cDiceBot.BTCRate * profit, 2).ToString("00.00");
-                            StatsWindows.lblWagered.Text = wagered.ToString("0.00000000") + " $" + Math.Round(cDiceBot.BTCRate * wagered, 2).ToString("00.00");
-                            StatsWindows.lblBalance.Text = PreviousBalance.ToString("0.00000000") + " $" + Math.Round(cDiceBot.BTCRate * PreviousBalance, 2).ToString("00.00");
+                            if (StatsWindows.showRate)
+                            {
+                                lblProfit2.Text = StatsWindows.lblProfit.Text = profit.ToString("0.00000000") + " $" + Math.Round(cDiceBot.BTCRate * profit, 2).ToString("00.00");
+                                StatsWindows.lblWagered.Text = wagered.ToString("0.00000000") + " $" + Math.Round(cDiceBot.BTCRate * wagered, 2).ToString("00.00");
+                                StatsWindows.lblBalance.Text = PreviousBalance.ToString("0.00000000") + " $" + Math.Round(cDiceBot.BTCRate * PreviousBalance, 2).ToString("00.00");
+                            }
+                            else
+                            {
+                                lblProfit2.Text = StatsWindows.lblProfit.Text = profit.ToString("0.00000000");
+                                StatsWindows.lblWagered.Text = wagered.ToString("0.00000000");
+                                StatsWindows.lblBalance.Text = PreviousBalance.ToString("0.00000000");
+                            }
+
                         }
-                        catch(Exception ex)
+                        catch (Exception ex)
                         {
                             // throw it away! just don't want it to crash.
                         }
@@ -1145,8 +1162,25 @@ namespace DiceBot
                         if (profpB > 0 && betsps > 0)
                             profph = (profpB * betsps) * 60.0m * 60.0m;
                         StatsWindows.lblProfpb.Text = profpB.ToString("0.00000000");
-                        StatsWindows.lblProfitph.Text = (profph.ToString("0.00000000")) + " $" + Math.Round(cDiceBot.BTCRate * profph, 2).ToString("00.00"); 
-                        StatsWindows.lblProfit24.Text = (profph* 24.0m).ToString("0.00000000") + " $" + Math.Round(cDiceBot.BTCRate * profph * 24.0m, 2).ToString("00.00"); 
+
+                        // MARKC
+                        try
+                        {
+                            if (StatsWindows.showRate)
+                            {
+                                StatsWindows.lblProfitph.Text = (profph.ToString("0.00000000")) + " $" + Math.Round(cDiceBot.BTCRate * profph, 2).ToString("00.00");
+                                StatsWindows.lblProfit24.Text = (profph * 24.0m).ToString("0.00000000") + " $" + Math.Round(cDiceBot.BTCRate * profph * 24.0m, 2).ToString("00.00");
+                            }
+                            else
+                            {
+                                StatsWindows.lblProfitph.Text = (profph.ToString("0.00000000"));
+                                StatsWindows.lblProfit24.Text = (profph * 24.0m).ToString("0.00000000");
+                            }
+                        }
+                        catch(Exception ex)
+                        {
+                            // throw it away just want to stop crash
+                        }
 
                         int imaxbets = maxbets();
                         if (imaxbets == -500)
@@ -4924,6 +4958,9 @@ namespace DiceBot
         int maxRows = 100;
         public void AddBet(object Bet)
         {
+            //MARKC
+            return;
+
             if (InvokeRequired)
             {
                 Invoke(new dupdateControll(AddBet), Bet);
@@ -6780,6 +6817,10 @@ namespace DiceBot
         int LogLevel = 0;
         public void DumpLog(string Message, int Level)
         {
+            // MARKC
+            return;
+
+
             if (Message!=null)
             {
                 if (Level<=LogLevel)

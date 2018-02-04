@@ -88,6 +88,8 @@
             this.lblBets = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.tcStats = new System.Windows.Forms.TabControl();
+            this.btnUpdateRate = new System.Windows.Forms.Button();
+            this.btnShowDollar = new System.Windows.Forms.Button();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudLastStreakWin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLastStreakLose)).BeginInit();
@@ -125,7 +127,7 @@
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(478, 244);
+            this.tabPage8.Size = new System.Drawing.Size(521, 244);
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "More Stats";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -363,6 +365,8 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.btnShowDollar);
+            this.tabPage7.Controls.Add(this.btnUpdateRate);
             this.tabPage7.Controls.Add(this.lblWagered);
             this.tabPage7.Controls.Add(this.label2);
             this.tabPage7.Controls.Add(this.btnHideStats);
@@ -697,6 +701,26 @@
             this.tcStats.Size = new System.Drawing.Size(529, 270);
             this.tcStats.TabIndex = 15;
             // 
+            // btnUpdateRate
+            // 
+            this.btnUpdateRate.Location = new System.Drawing.Point(281, 203);
+            this.btnUpdateRate.Name = "btnUpdateRate";
+            this.btnUpdateRate.Size = new System.Drawing.Size(97, 23);
+            this.btnUpdateRate.TabIndex = 34;
+            this.btnUpdateRate.Text = "Update Rate";
+            this.btnUpdateRate.UseVisualStyleBackColor = true;
+            this.btnUpdateRate.Click += new System.EventHandler(this.btnUpdateRate_Click);
+            // 
+            // btnShowDollar
+            // 
+            this.btnShowDollar.Location = new System.Drawing.Point(234, 203);
+            this.btnShowDollar.Name = "btnShowDollar";
+            this.btnShowDollar.Size = new System.Drawing.Size(41, 23);
+            this.btnShowDollar.TabIndex = 35;
+            this.btnShowDollar.Text = "$";
+            this.btnShowDollar.UseVisualStyleBackColor = true;
+            this.btnShowDollar.Click += new System.EventHandler(this.btnShowDollar_Click);
+            // 
             // Stats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -779,6 +803,7 @@
         public System.Windows.Forms.TabControl tcStats;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label lblWagered;
-
+        public System.Windows.Forms.Button btnShowDollar;
+        public System.Windows.Forms.Button btnUpdateRate;
     }
 }
