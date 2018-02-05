@@ -736,6 +736,12 @@ namespace DiceBot
             //MARKC
             BTCRate = DiceBot.BTCRate.GetRate();
 
+            // MARKC
+            StatsWindows.diceBot = this;
+            StatsWindows.Show();
+
+            LoadCode();
+
             DumpLog("constructor done", 8);
         }
 
@@ -6880,7 +6886,22 @@ namespace DiceBot
         {
             new BitdiceConfirm().ShowDialog();
         }
-        
+
+        // MARKC
+        public void SaveCode()
+        {
+            File.WriteAllText("./tmpcode.txt", richTextBox3.Text);
+        }
+
+        public void LoadCode()
+        {
+            if (File.Exists("./tmpcode.txt"))
+            {
+                String s = File.ReadAllText("./tmpcode.txt");
+                richTextBox3.Text = s;
+            }
+        }
+
     }
 }
 

@@ -68,7 +68,8 @@ namespace DiceBot
         }
 
         private void btnStart_Click(object sender, EventArgs e)
-        {           
+        {
+            diceBot.SaveCode();
             diceBot.Start(false);
         }
 
