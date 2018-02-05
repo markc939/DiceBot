@@ -55,6 +55,9 @@
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.btnStop = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
+            this.btnSpeedMode = new System.Windows.Forms.Button();
             this.btnShowDollar = new System.Windows.Forms.Button();
             this.btnUpdateRate = new System.Windows.Forms.Button();
             this.lblWagered = new System.Windows.Forms.Label();
@@ -90,9 +93,6 @@
             this.lblBets = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.tcStats = new System.Windows.Forms.TabControl();
-            this.btnSpeedMode = new System.Windows.Forms.Button();
-            this.btnStart = new System.Windows.Forms.Button();
-            this.btnStop = new System.Windows.Forms.Button();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudLastStreakWin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLastStreakLose)).BeginInit();
@@ -414,24 +414,60 @@
             this.tabPage7.UseVisualStyleBackColor = true;
             this.tabPage7.Click += new System.EventHandler(this.tabPage7_Click);
             // 
+            // btnStop
+            // 
+            this.btnStop.Location = new System.Drawing.Point(193, 213);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(51, 23);
+            this.btnStop.TabIndex = 38;
+            this.btnStop.Text = "Stop";
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
+            // btnStart
+            // 
+            this.btnStart.Location = new System.Drawing.Point(136, 213);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(51, 23);
+            this.btnStart.TabIndex = 37;
+            this.btnStart.Text = "Start";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
+            // btnSpeedMode
+            // 
+            this.btnSpeedMode.BackColor = System.Drawing.Color.Red;
+            this.btnSpeedMode.ForeColor = System.Drawing.Color.White;
+            this.btnSpeedMode.Location = new System.Drawing.Point(275, 213);
+            this.btnSpeedMode.Name = "btnSpeedMode";
+            this.btnSpeedMode.Size = new System.Drawing.Size(94, 23);
+            this.btnSpeedMode.TabIndex = 36;
+            this.btnSpeedMode.Text = "Speed Mode Off";
+            this.btnSpeedMode.UseVisualStyleBackColor = false;
+            this.btnSpeedMode.Click += new System.EventHandler(this.btnSpeedMode_Click);
+            // 
             // btnShowDollar
             // 
+            this.btnShowDollar.BackColor = System.Drawing.Color.Green;
+            this.btnShowDollar.ForeColor = System.Drawing.Color.White;
             this.btnShowDollar.Location = new System.Drawing.Point(472, 213);
             this.btnShowDollar.Name = "btnShowDollar";
             this.btnShowDollar.Size = new System.Drawing.Size(41, 23);
             this.btnShowDollar.TabIndex = 35;
             this.btnShowDollar.Text = "$";
-            this.btnShowDollar.UseVisualStyleBackColor = true;
+            this.btnShowDollar.UseVisualStyleBackColor = false;
             this.btnShowDollar.Click += new System.EventHandler(this.btnShowDollar_Click);
             // 
             // btnUpdateRate
             // 
-            this.btnUpdateRate.Location = new System.Drawing.Point(369, 213);
+            this.btnUpdateRate.BackColor = System.Drawing.Color.Red;
+            this.btnUpdateRate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdateRate.Location = new System.Drawing.Point(372, 213);
             this.btnUpdateRate.Name = "btnUpdateRate";
-            this.btnUpdateRate.Size = new System.Drawing.Size(97, 23);
+            this.btnUpdateRate.Size = new System.Drawing.Size(94, 23);
             this.btnUpdateRate.TabIndex = 34;
-            this.btnUpdateRate.Text = "Update Rate";
-            this.btnUpdateRate.UseVisualStyleBackColor = true;
+            this.btnUpdateRate.Text = "Update Rate Off";
+            this.btnUpdateRate.UseVisualStyleBackColor = false;
             this.btnUpdateRate.Click += new System.EventHandler(this.btnUpdateRate_Click);
             // 
             // lblWagered
@@ -454,7 +490,7 @@
             // 
             // btnHideStats
             // 
-            this.btnHideStats.Location = new System.Drawing.Point(384, 7);
+            this.btnHideStats.Location = new System.Drawing.Point(438, 7);
             this.btnHideStats.Name = "btnHideStats";
             this.btnHideStats.Size = new System.Drawing.Size(75, 23);
             this.btnHideStats.TabIndex = 31;
@@ -726,36 +762,6 @@
             this.tcStats.SelectedIndex = 0;
             this.tcStats.Size = new System.Drawing.Size(529, 270);
             this.tcStats.TabIndex = 15;
-            // 
-            // btnSpeedMode
-            // 
-            this.btnSpeedMode.Location = new System.Drawing.Point(266, 213);
-            this.btnSpeedMode.Name = "btnSpeedMode";
-            this.btnSpeedMode.Size = new System.Drawing.Size(97, 23);
-            this.btnSpeedMode.TabIndex = 36;
-            this.btnSpeedMode.Text = "Speed Mode";
-            this.btnSpeedMode.UseVisualStyleBackColor = true;
-            this.btnSpeedMode.Click += new System.EventHandler(this.btnSpeedMode_Click);
-            // 
-            // btnStart
-            // 
-            this.btnStart.Location = new System.Drawing.Point(119, 213);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(51, 23);
-            this.btnStart.TabIndex = 37;
-            this.btnStart.Text = "Start";
-            this.btnStart.UseVisualStyleBackColor = true;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
-            // 
-            // btnStop
-            // 
-            this.btnStop.Location = new System.Drawing.Point(176, 213);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(51, 23);
-            this.btnStop.TabIndex = 38;
-            this.btnStop.Text = "Stop";
-            this.btnStop.UseVisualStyleBackColor = true;
-            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // Stats
             // 

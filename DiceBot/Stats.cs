@@ -17,6 +17,9 @@ namespace DiceBot
         // MARKC
          public cDiceBot diceBot;
 
+        private Boolean updateRate = false;
+        private System.Timers.Timer RateTimer = null;
+
         public Stats()
         {
             InitializeComponent();
@@ -24,6 +27,13 @@ namespace DiceBot
             // MARKC
             cDiceBot.updateRate();
             this.Text = "Stats BTC Rate $" + DiceBot.BTCRate.GetRate().ToString();
+
+            RateTimer = new System.Timers.Timer();
+            RateTimer.Elapsed += new ElapsedEventHandler(UpdateRate);
+            RateTimer.Interval = 900000;
+
+            btnUpdateRate.BackColor = Color.Red;
+            btnSpeedMode.BackColor = Color.Red;
         }
 
         protected override void OnClosing(CancelEventArgs e)
@@ -54,11 +64,20 @@ namespace DiceBot
 
         private void btnUpdateRate_Click(object sender, EventArgs e)
         {
-           // UpdateRate();
-            System.Timers.Timer aTimer = new System.Timers.Timer();
-            aTimer.Elapsed += new ElapsedEventHandler(UpdateRate);
-            aTimer.Interval = 900000;
-            aTimer.Enabled = true;
+            updateRate = !updateRate;
+            if (updateRate)
+            {
+                btnUpdateRate.BackColor = Color.Green;
+                btnUpdateRate.Text = "Update Rate On";
+                RateTimer.Enabled = true;
+                UpdateRate(sender, null);
+            }
+            else
+            {
+                btnUpdateRate.Text = "Update Rate Off";
+                btnUpdateRate.BackColor = Color.Red;
+                RateTimer.Enabled = false;
+            }
 
         }
 
@@ -78,11 +97,30 @@ namespace DiceBot
         private void btnShowDollar_Click(object sender, EventArgs e)
         {
             showRate = !showRate;
+            if(showRate)
+            {
+                btnShowDollar.BackColor = Color.Green;
+            }
+            else
+            {
+                btnShowDollar.BackColor = Color.Red;
+            }
         }
 
         private void btnSpeedMode_Click(object sender, EventArgs e)
         {
             cDiceBot.SpeedMode = !cDiceBot.SpeedMode;
+
+            if (cDiceBot.SpeedMode)
+            {
+                btnSpeedMode.BackColor = Color.Green;
+                btnSpeedMode.Text = "Speed Mode On";
+            }
+            else
+            {
+                btnSpeedMode.BackColor = Color.Red;
+                btnSpeedMode.Text = "Speed Mode Off";
+            }
         }
 
         private void btnStart_Click(object sender, EventArgs e)
