@@ -55,6 +55,8 @@
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.btnShowDollar = new System.Windows.Forms.Button();
+            this.btnUpdateRate = new System.Windows.Forms.Button();
             this.lblWagered = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnHideStats = new System.Windows.Forms.Button();
@@ -88,8 +90,9 @@
             this.lblBets = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.tcStats = new System.Windows.Forms.TabControl();
-            this.btnUpdateRate = new System.Windows.Forms.Button();
-            this.btnShowDollar = new System.Windows.Forms.Button();
+            this.btnSpeedMode = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
+            this.btnStop = new System.Windows.Forms.Button();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudLastStreakWin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLastStreakLose)).BeginInit();
@@ -365,6 +368,9 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.btnStop);
+            this.tabPage7.Controls.Add(this.btnStart);
+            this.tabPage7.Controls.Add(this.btnSpeedMode);
             this.tabPage7.Controls.Add(this.btnShowDollar);
             this.tabPage7.Controls.Add(this.btnUpdateRate);
             this.tabPage7.Controls.Add(this.lblWagered);
@@ -407,6 +413,26 @@
             this.tabPage7.Text = "Stats";
             this.tabPage7.UseVisualStyleBackColor = true;
             this.tabPage7.Click += new System.EventHandler(this.tabPage7_Click);
+            // 
+            // btnShowDollar
+            // 
+            this.btnShowDollar.Location = new System.Drawing.Point(472, 213);
+            this.btnShowDollar.Name = "btnShowDollar";
+            this.btnShowDollar.Size = new System.Drawing.Size(41, 23);
+            this.btnShowDollar.TabIndex = 35;
+            this.btnShowDollar.Text = "$";
+            this.btnShowDollar.UseVisualStyleBackColor = true;
+            this.btnShowDollar.Click += new System.EventHandler(this.btnShowDollar_Click);
+            // 
+            // btnUpdateRate
+            // 
+            this.btnUpdateRate.Location = new System.Drawing.Point(369, 213);
+            this.btnUpdateRate.Name = "btnUpdateRate";
+            this.btnUpdateRate.Size = new System.Drawing.Size(97, 23);
+            this.btnUpdateRate.TabIndex = 34;
+            this.btnUpdateRate.Text = "Update Rate";
+            this.btnUpdateRate.UseVisualStyleBackColor = true;
+            this.btnUpdateRate.Click += new System.EventHandler(this.btnUpdateRate_Click);
             // 
             // lblWagered
             // 
@@ -455,7 +481,7 @@
             // 
             // btnResetStats
             // 
-            this.btnResetStats.Location = new System.Drawing.Point(384, 203);
+            this.btnResetStats.Location = new System.Drawing.Point(12, 213);
             this.btnResetStats.Name = "btnResetStats";
             this.btnResetStats.Size = new System.Drawing.Size(75, 23);
             this.btnResetStats.TabIndex = 28;
@@ -701,25 +727,35 @@
             this.tcStats.Size = new System.Drawing.Size(529, 270);
             this.tcStats.TabIndex = 15;
             // 
-            // btnUpdateRate
+            // btnSpeedMode
             // 
-            this.btnUpdateRate.Location = new System.Drawing.Point(281, 203);
-            this.btnUpdateRate.Name = "btnUpdateRate";
-            this.btnUpdateRate.Size = new System.Drawing.Size(97, 23);
-            this.btnUpdateRate.TabIndex = 34;
-            this.btnUpdateRate.Text = "Update Rate";
-            this.btnUpdateRate.UseVisualStyleBackColor = true;
-            this.btnUpdateRate.Click += new System.EventHandler(this.btnUpdateRate_Click);
+            this.btnSpeedMode.Location = new System.Drawing.Point(266, 213);
+            this.btnSpeedMode.Name = "btnSpeedMode";
+            this.btnSpeedMode.Size = new System.Drawing.Size(97, 23);
+            this.btnSpeedMode.TabIndex = 36;
+            this.btnSpeedMode.Text = "Speed Mode";
+            this.btnSpeedMode.UseVisualStyleBackColor = true;
+            this.btnSpeedMode.Click += new System.EventHandler(this.btnSpeedMode_Click);
             // 
-            // btnShowDollar
+            // btnStart
             // 
-            this.btnShowDollar.Location = new System.Drawing.Point(234, 203);
-            this.btnShowDollar.Name = "btnShowDollar";
-            this.btnShowDollar.Size = new System.Drawing.Size(41, 23);
-            this.btnShowDollar.TabIndex = 35;
-            this.btnShowDollar.Text = "$";
-            this.btnShowDollar.UseVisualStyleBackColor = true;
-            this.btnShowDollar.Click += new System.EventHandler(this.btnShowDollar_Click);
+            this.btnStart.Location = new System.Drawing.Point(119, 213);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(51, 23);
+            this.btnStart.TabIndex = 37;
+            this.btnStart.Text = "Start";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
+            // btnStop
+            // 
+            this.btnStop.Location = new System.Drawing.Point(176, 213);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(51, 23);
+            this.btnStop.TabIndex = 38;
+            this.btnStop.Text = "Stop";
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // Stats
             // 
@@ -805,5 +841,8 @@
         public System.Windows.Forms.Label lblWagered;
         public System.Windows.Forms.Button btnShowDollar;
         public System.Windows.Forms.Button btnUpdateRate;
+        public System.Windows.Forms.Button btnSpeedMode;
+        public System.Windows.Forms.Button btnStop;
+        public System.Windows.Forms.Button btnStart;
     }
 }

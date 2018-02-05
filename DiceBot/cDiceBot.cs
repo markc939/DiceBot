@@ -21,6 +21,7 @@ using WMPLib;
 using System.Globalization;
 using System.Reflection;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Threading.Tasks;
 
 namespace DiceBot
 {
@@ -56,6 +57,7 @@ namespace DiceBot
         decimal Limit = 0;
         decimal Amount = 0;
 
+        // MARKC
         string pause = "false";
         int pauselength = 0;
 
@@ -109,6 +111,7 @@ namespace DiceBot
 
         // MARKC
         static Decimal BTCRate = 0;
+        public static Boolean SpeedMode = false;
 
         #region settings vars
         public bool tray = false;
@@ -207,13 +210,15 @@ namespace DiceBot
             Chartprofit += (decimal)bet.Profit;
             wagered += (decimal)bet.Amount;
             bool Win = (((bool)bet.high ? (decimal)bet.Roll > (decimal)CurrentSite.maxRoll - (decimal)(bet.Chance) : (decimal)bet.Roll < (decimal)(bet.Chance)));
-            
+
 
             // MARKC
             //if (!RunningSimulation)
             //{
-                
+            if (!SpeedMode)
+            {
                 new Thread(new ParameterizedThreadStart(AddChartPoint)).Start(Win);
+            }
             //}
 
             if (InvokeRequired)
@@ -1390,7 +1395,9 @@ namespace DiceBot
         //tmstop_tick
         #region Core Program
 
-        private void Stop(string Reason)
+
+            // MARKC private to public
+        public void Stop(string Reason)
         {
             DumpLog(Reason+", stopping", 8);
 
@@ -1616,7 +1623,8 @@ namespace DiceBot
             }
         }
 
-        void Start(bool Continue)
+        // MARKC Public it.
+        public void Start(bool Continue)
         {
             if (!Continue)
             {
@@ -2748,8 +2756,8 @@ namespace DiceBot
                         }
 
                     if (!stop)
-                    {
-                        if (!RunningSimulation)
+                    {                               // MARKC
+                        if (!RunningSimulation && !SpeedMode)
                         WriteConsole("Betting " + Lastbet + " at " + Chance +"% chance to win, "+ (high?"high":"low"));
                         EnableTimer(tmBet, true);
 
@@ -2766,8 +2774,12 @@ namespace DiceBot
             reset = false;
         }
 
+   
+
         System.Collections.ArrayList Vars = new System.Collections.ArrayList();
-        private void parseScript(Bet bet)
+
+        // MARKC async
+         private void parseScript(Bet bet)
         {
 
             try
@@ -2776,7 +2788,7 @@ namespace DiceBot
             
                 SetLuaVars();
 
-
+                // MARKC
                 Lua["roll"] = bet.Roll;
                 Lua["win"] = Win;
                 Lua["currentprofit"] = ((decimal)(bet.Profit * 100000000m)) / 100000000.0m;
@@ -2785,12 +2797,13 @@ namespace DiceBot
                 LuaRuntime.Run("dobet()");
                 GetLuaVars();
 
+                // MARKC
                 if (Lua.GetString("pause") != null)
                 {
                     if (Lua["pause"].ToString() == "true")
                     {
                         int pauselength = Convert.ToInt16(Lua["pauselength"]) * 1000;
-                        System.Threading.Thread.Sleep(pauselength);
+                        System.Threading.Thread.Sleep(pauselength);  
                     }
                 }
                 else
@@ -2824,6 +2837,12 @@ namespace DiceBot
         
         void WriteConsole(string Message)
         {
+            // MARKC
+            if(SpeedMode)
+            {
+                return;
+            }
+
 
             if (InvokeRequired)
             {
@@ -4959,7 +4978,10 @@ namespace DiceBot
         public void AddBet(object Bet)
         {
             //MARKC
-            return;
+            if (cDiceBot.SpeedMode)
+            {
+                return;
+            }
 
             if (InvokeRequired)
             {
@@ -6080,6 +6102,7 @@ namespace DiceBot
         
         private void statsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            StatsWindows.diceBot = this;
             StatsWindows.Show();
         }
 
@@ -6818,7 +6841,10 @@ namespace DiceBot
         public void DumpLog(string Message, int Level)
         {
             // MARKC
-            return;
+            if (SpeedMode)
+            {
+                return;
+            }
 
 
             if (Message!=null)

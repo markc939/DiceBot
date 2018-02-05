@@ -13,6 +13,9 @@ namespace DiceBot
     {
         public  bool showRate = true;
 
+        // MARKC
+         public cDiceBot diceBot;
+
         public Stats()
         {
             InitializeComponent();
@@ -58,5 +61,22 @@ namespace DiceBot
         {
             showRate = !showRate;
         }
+
+        private void btnSpeedMode_Click(object sender, EventArgs e)
+        {
+            cDiceBot.SpeedMode = !cDiceBot.SpeedMode;
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {           
+            diceBot.Start(false);
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            diceBot.Stop("Manual Stop");
+        }
+
+      
     }
 }
