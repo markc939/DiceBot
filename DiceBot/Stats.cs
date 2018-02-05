@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Timers;
 using System.Windows.Forms;
 
 namespace DiceBot
@@ -53,8 +54,25 @@ namespace DiceBot
 
         private void btnUpdateRate_Click(object sender, EventArgs e)
         {
-            cDiceBot.updateRate();
-            this.Text = "Stats BTC Rate $" + DiceBot.BTCRate.GetRate().ToString();
+           // UpdateRate();
+            System.Timers.Timer aTimer = new System.Timers.Timer();
+            aTimer.Elapsed += new ElapsedEventHandler(UpdateRate);
+            aTimer.Interval = 900000;
+            aTimer.Enabled = true;
+
+        }
+
+        delegate void dUpdateRate(object source, ElapsedEventArgs e);
+        private void UpdateRate(object source, ElapsedEventArgs e)
+        {
+
+            if (InvokeRequired)
+                Invoke(new dUpdateRate(UpdateRate), source, e);
+            else
+            {
+                cDiceBot.updateRate();
+                this.Text = "Stats BTC Rate $" + DiceBot.BTCRate.GetRate().ToString();
+            }
         }
 
         private void btnShowDollar_Click(object sender, EventArgs e)
