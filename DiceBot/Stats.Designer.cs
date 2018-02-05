@@ -93,6 +93,7 @@
             this.lblBets = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.tcStats = new System.Windows.Forms.TabControl();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudLastStreakWin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLastStreakLose)).BeginInit();
@@ -368,6 +369,7 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.button1);
             this.tabPage7.Controls.Add(this.btnStop);
             this.tabPage7.Controls.Add(this.btnStart);
             this.tabPage7.Controls.Add(this.btnSpeedMode);
@@ -416,17 +418,17 @@
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(193, 213);
+            this.btnStop.Location = new System.Drawing.Point(145, 213);
             this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(51, 23);
+            this.btnStop.Size = new System.Drawing.Size(78, 23);
             this.btnStop.TabIndex = 38;
-            this.btnStop.Text = "Stop";
+            this.btnStop.Text = "Stop On Win";
             this.btnStop.UseVisualStyleBackColor = true;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(136, 213);
+            this.btnStart.Location = new System.Drawing.Point(91, 213);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(51, 23);
             this.btnStart.TabIndex = 37;
@@ -763,6 +765,16 @@
             this.tcStats.Size = new System.Drawing.Size(529, 270);
             this.tcStats.TabIndex = 15;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(225, 213);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(47, 23);
+            this.button1.TabIndex = 39;
+            this.button1.Text = "Stop";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Stats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -850,5 +862,6 @@
         public System.Windows.Forms.Button btnSpeedMode;
         public System.Windows.Forms.Button btnStop;
         public System.Windows.Forms.Button btnStart;
+        public System.Windows.Forms.Button button1;
     }
 }

@@ -131,9 +131,13 @@ namespace DiceBot
 
         private void btnStop_Click(object sender, EventArgs e)
         {
-            diceBot.Stop("Manual Stop");
+            diceBot.stoponwin = true;
+           
         }
 
-      
+        private void button1_Click(object sender, EventArgs e)
+        {
+            diceBot.Stop("Manual Stop");
+        }
     }
 }

@@ -106,7 +106,9 @@ namespace DiceBot
         bool invest = false;
         bool reset = false;
         bool running = false;
-        bool stoponwin = false;
+
+        /
+        public bool stoponwin = false;
 
 
         // MARKC
@@ -1402,7 +1404,7 @@ namespace DiceBot
         #region Core Program
 
 
-            // MARKC private to public
+        // MARKC private to public
         public void Stop(string Reason)
         {
             DumpLog(Reason+", stopping", 8);
