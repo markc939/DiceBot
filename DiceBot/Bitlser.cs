@@ -489,7 +489,8 @@ devise:btc*/
 
             int type_delay=0;
             
-            if (Currency.ToLower() == "btc") {
+            // MARKC
+            if (Currency == null || Currency.ToLower() == "btc") {
                 if (LastBetAmount<= 0.00000005|| (double)amount <= 0.00000005 )
                     type_delay = 1;
                 else 

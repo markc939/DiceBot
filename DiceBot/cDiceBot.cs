@@ -107,7 +107,7 @@ namespace DiceBot
         bool reset = false;
         bool running = false;
 
-        /
+        
         public bool stoponwin = false;
 
 
@@ -2937,8 +2937,14 @@ namespace DiceBot
 
                 if (RunningSimulation)
                 {
-                    LastBetPlaced = Guid.NewGuid().ToString();
-                    Simbet();
+
+                    // MARKC
+                    if (CurrentSite.ReadyToBet() && valid)
+                    {
+
+                        LastBetPlaced = Guid.NewGuid().ToString();
+                        Simbet();
+                    }
                 }
                 else
                 if (CurrentSite.ReadyToBet() && valid)
