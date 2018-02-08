@@ -1095,13 +1095,13 @@ namespace DiceBot
                 lblWins2.Text = Wins.ToString();
                 if (StatsWindows!= null)
                 {
-                    if (!StatsWindows.IsDisposed)\
+                    if (!StatsWindows.IsDisposed)
                     {
 
                         StatsWindows.lblLoseStreak.Text = WorstStreak.ToString();
                         if(Lua["WorstSimulatedLossStreak"] != null)
                         {
-                            StatsWindows.lblLoseStreak.Text += " / " + Lua["WorstSimulatedLossStreak"];
+                            StatsWindows.lblLoseStreak.Text += " / Sim: " + Lua["WorstSimulatedLossStreak"];
                         }
               
                         lblLosses2.Text = StatsWindows.lblLosses.Text = Losses.ToString();
@@ -1145,12 +1145,12 @@ namespace DiceBot
                         }
                         if (Winstreak == 0)
                         {
-                            lblCustreak2.Text = StatsWindows.lblCustreak.Text = Losestreak.ToString();
+                            lblCustreak2.Text = StatsWindows.lblCustreak.Text = (Losestreak.ToString() + " / Sim: " + (Lua["SimulatedLossStreak"].ToString() != null ? Lua["SimulatedLossStreak"].ToString() : ""));
                             lblCustreak2.ForeColor = StatsWindows.lblCustreak.ForeColor = Color.Red;
                         }
                         else
                         {
-                            lblCustreak2.Text = StatsWindows.lblCustreak.Text = Winstreak.ToString();
+                            lblCustreak2.Text = StatsWindows.lblCustreak.Text = (Winstreak.ToString() + "/ Sim: " + (Lua["SimulatedLossStreak"].ToString() != null ? Lua["SimulatedLossStreak"].ToString() : ""));
                             lblCustreak2.ForeColor = StatsWindows.lblCustreak.ForeColor = Color.Green;
 
                         }
