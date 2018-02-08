@@ -1095,9 +1095,15 @@ namespace DiceBot
                 lblWins2.Text = Wins.ToString();
                 if (StatsWindows!= null)
                 {
-                    if (!StatsWindows.IsDisposed)
+                    if (!StatsWindows.IsDisposed)\
                     {
+
                         StatsWindows.lblLoseStreak.Text = WorstStreak.ToString();
+                        if(Lua["WorstSimulatedLossStreak"] != null)
+                        {
+                            StatsWindows.lblLoseStreak.Text += " / " + Lua["WorstSimulatedLossStreak"];
+                        }
+              
                         lblLosses2.Text = StatsWindows.lblLosses.Text = Losses.ToString();
 
                         // MARKC
@@ -2819,6 +2825,8 @@ namespace DiceBot
                     Lua["pause"] = "false";
                     Lua["pauselength"] = 0;
                 }
+
+
 
                 if ((Wins+Losses)%100==0)
                 {
