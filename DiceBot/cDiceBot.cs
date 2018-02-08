@@ -1098,12 +1098,8 @@ namespace DiceBot
                     if (!StatsWindows.IsDisposed)
                     {
 
-                        StatsWindows.lblLoseStreak.Text = WorstStreak.ToString();
-                        if(Lua["WorstSimulatedLossStreak"] != null)
-                        {
-                            StatsWindows.lblLoseStreak.Text += " / Sim: " + Lua["WorstSimulatedLossStreak"];
-                        }
-              
+                        StatsWindows.lblLoseStreak.Text = WorstStreak.ToString() + ((Lua["WorstSimulatedLossStreak"] != null) ? " / Sim: " + Lua["WorstSimulatedLossStreak"] : "");
+                                      
                         lblLosses2.Text = StatsWindows.lblLosses.Text = Losses.ToString();
 
                         // MARKC
