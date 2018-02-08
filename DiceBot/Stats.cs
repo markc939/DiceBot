@@ -13,9 +13,9 @@ namespace DiceBot
     public partial class Stats : Form
     {
         public  bool showRate = true;
-
+        public bool slowSim = false;
         // MARKC
-         public cDiceBot diceBot;
+        public cDiceBot diceBot;
 
         private Boolean updateRate = false;
         private System.Timers.Timer RateTimer = null;
@@ -138,6 +138,23 @@ namespace DiceBot
         private void button1_Click(object sender, EventArgs e)
         {
             diceBot.Stop("Manual Stop");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            slowSim = !slowSim;
+            diceBot.SlowSpeed(slowSim);
+
+            if (slowSim)
+            {
+                button3.BackColor = Color.Green;
+                button3.Text = "Slow Sim On";
+            }
+            else
+            {
+                button3.BackColor = Color.Red;
+                button3.Text = "Slow Sim Off";
+            }
         }
     }
 }

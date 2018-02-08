@@ -1395,7 +1395,7 @@ namespace DiceBot
             luck = tmp;
         }
         #endregion
-         
+
         //Core Program
         //includes -
         //Stop()
@@ -1410,7 +1410,22 @@ namespace DiceBot
         #region Core Program
 
 
-        // MARKC private to public
+        // MARKC
+        public void SlowSpeed(Boolean on)
+        {
+            if(on)
+            {
+                chkBotSpeed.Checked = true;
+                nudBotSpeed.Value = Convert.ToDecimal(1.840);
+            }
+            else
+            {
+                nudBotSpeed.Value = Convert.ToDecimal(3.0);
+                chkBotSpeed.Checked = false;
+            }
+        }
+
+            // MARKC private to public
         public void Stop(string Reason)
         {
             DumpLog(Reason+", stopping", 8);
@@ -6901,6 +6916,11 @@ namespace DiceBot
         private void bitdiceActivatorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new BitdiceConfirm().ShowDialog();
+        }
+
+        private void chkBotSpeed_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
 
         // MARKC
