@@ -1150,7 +1150,7 @@ namespace DiceBot
                         }
                         else
                         {
-                            lblCustreak2.Text = StatsWindows.lblCustreak.Text = (Winstreak.ToString() + "/ Sim: " + (Lua["SimulatedLossStreak"].ToString() != null ? Lua["SimulatedLossStreak"].ToString() : ""));
+                            lblCustreak2.Text = StatsWindows.lblCustreak.Text = (Winstreak.ToString() + " / Sim: " + (Lua["SimulatedLossStreak"].ToString() != null ? Lua["SimulatedLossStreak"].ToString() : ""));
                             lblCustreak2.ForeColor = StatsWindows.lblCustreak.ForeColor = Color.Green;
 
                         }
