@@ -1239,7 +1239,7 @@ namespace DiceBot
                         }
 
                         StatsWindows.streak1.Text = "Streaks Below 10 : " + (Lua["StreaksBelow10"] != null ? Lua["StreaksBelow10"].ToString() : "");
-                        StatsWindows.streak2.Text = "Streaks Above 10 : " + (Lua["StreaksAbove10"] != null ? Lua["StreaksAbove10"].ToString() : "");
+                        StatsWindows.streak2.Text = "Above 10 : " + (Lua["StreaksAbove10"] != null ? Lua["StreaksAbove10"].ToString() : "");
                         StatsWindows.streak3.Text = "Above 20 : " + (Lua["StreaksAbove20"] != null ? Lua["StreaksAbove20"].ToString() : "");
                         StatsWindows.streak4.Text = "Above 30 : " + (Lua["StreaksAbove30"] != null ? Lua["StreaksAbove30"].ToString() : "");
                         StatsWindows.streak5.Text = "Above 40 : " + (Lua["StreaksAbove40"] != null ? Lua["StreaksAbove40"].ToString() : "");
