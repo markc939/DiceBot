@@ -156,5 +156,10 @@ namespace DiceBot
                 button3.Text = "Slow Sim Off";
             }
         }
+
+        private void streak1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

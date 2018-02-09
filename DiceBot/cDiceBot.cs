@@ -1237,6 +1237,24 @@ namespace DiceBot
                         {
                             StatsWindows.lblLuck.Text = luck.ToString("00.00") + "%";
                         }
+
+                        StatsWindows.streak1.Text = "Streaks Below 10 : " + (Lua["StreaksBelow10"] != null ? Lua["StreaksBelow10"].ToString() : "");
+                        StatsWindows.streak2.Text = "Streaks Above 10 : " + (Lua["StreaksAbove10"] != null ? Lua["StreaksAbove10"].ToString() : "");
+                        StatsWindows.streak3.Text = "Above 20 : " + (Lua["StreaksAbove20"] != null ? Lua["StreaksAbove20"].ToString() : "");
+                        StatsWindows.streak4.Text = "Above 30 : " + (Lua["StreaksAbove30"] != null ? Lua["StreaksAbove30"].ToString() : "");
+                        StatsWindows.streak5.Text = "Above 40 : " + (Lua["StreaksAbove40"] != null ? Lua["StreaksAbove40"].ToString() : "");
+                        StatsWindows.streak6.Text = "Above 50 : " + (Lua["StreaksAbove50"] != null ? Lua["StreaksAbove50"].ToString() : "");
+                        StatsWindows.streak7.Text = "Above 60 : " + (Lua["StreaksAbove60"] != null ? Lua["StreaksAbove60"].ToString() : "");
+                        StatsWindows.streak8.Text = "Above 70 : " + (Lua["StreaksAbove70"] != null ? Lua["StreaksAbove70"].ToString() : "");
+                        StatsWindows.streak9.Text = "Above 80 : " + (Lua["StreaksAbove80"] != null ? Lua["StreaksAbove80"].ToString() : "");
+                        StatsWindows.streak10.Text = "Above 90 : " + (Lua["StreaksAbove90"] != null ? Lua["StreaksAbove90"].ToString() : "");
+                        StatsWindows.streak11.Text = "Above 100 : " + (Lua["StreaksAbove100"] != null ? Lua["StreaksAbove100"].ToString() : "");
+                        StatsWindows.streak12.Text = "Above 110 : " + (Lua["StreaksAbove110"] != null ? Lua["StreaksAbove110"].ToString() : "");
+                        StatsWindows.streak13.Text = "Above 120 : " + (Lua["StreaksAbove120"] != null ? Lua["StreaksAbove120"].ToString() : "");
+                        StatsWindows.streak14.Text = "Above 130 : " + (Lua["StreaksAbove130"] != null ? Lua["StreaksAbove130"].ToString() : "");
+
+
+
                     }
                 }
 

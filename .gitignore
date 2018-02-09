@@ -259,3 +259,18 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+.vs/DiceBot/v15/Server/sqlite3/storage.ide-shm
+.vs/DiceBot/v15/.suo
+.vs/DiceBot/v15/Server/sqlite3/storage.ide-wal
+.vs/DiceBot/v15/Server/sqlite3/storage.ide-shm
+.vs/DiceBot/v15/Server/sqlite3/storage.ide-wal
+DiceBot/Bin/Debug/app.publish/DiceBot.exe
+DiceBot/Bin/Debug/DiceBot.exe
+DiceBot/Bin/Debug/DiceBot.exe.manifest
+DiceBot/Bin/Debug/DiceBot.pdb
+DiceBot/Bin/Debug/TempCodeBackup.txt
+DiceBot/obj/Debug/DiceBot.application
+DiceBot/obj/Debug/DiceBot.csprojResolveAssemblyReference.cache
+DiceBot/obj/Debug/DiceBot.exe
+DiceBot/obj/Debug/DiceBot.exe.manifest
+DiceBot/obj/Debug/DiceBot.pdb

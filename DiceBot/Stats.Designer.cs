@@ -55,6 +55,21 @@
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.streak14 = new System.Windows.Forms.Label();
+            this.streak1 = new System.Windows.Forms.Label();
+            this.streak13 = new System.Windows.Forms.Label();
+            this.streak2 = new System.Windows.Forms.Label();
+            this.streak12 = new System.Windows.Forms.Label();
+            this.streak11 = new System.Windows.Forms.Label();
+            this.streak10 = new System.Windows.Forms.Label();
+            this.streak9 = new System.Windows.Forms.Label();
+            this.streak8 = new System.Windows.Forms.Label();
+            this.streak7 = new System.Windows.Forms.Label();
+            this.streak6 = new System.Windows.Forms.Label();
+            this.streak5 = new System.Windows.Forms.Label();
+            this.streak4 = new System.Windows.Forms.Label();
+            this.streak3 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
@@ -94,7 +109,6 @@
             this.lblBets = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.tcStats = new System.Windows.Forms.TabControl();
-            this.button3 = new System.Windows.Forms.Button();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudLastStreakWin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLastStreakLose)).BeginInit();
@@ -132,7 +146,7 @@
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(521, 244);
+            this.tabPage8.Size = new System.Drawing.Size(690, 244);
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "More Stats";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -370,6 +384,20 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.streak14);
+            this.tabPage7.Controls.Add(this.streak1);
+            this.tabPage7.Controls.Add(this.streak13);
+            this.tabPage7.Controls.Add(this.streak2);
+            this.tabPage7.Controls.Add(this.streak12);
+            this.tabPage7.Controls.Add(this.streak11);
+            this.tabPage7.Controls.Add(this.streak10);
+            this.tabPage7.Controls.Add(this.streak9);
+            this.tabPage7.Controls.Add(this.streak8);
+            this.tabPage7.Controls.Add(this.streak7);
+            this.tabPage7.Controls.Add(this.streak6);
+            this.tabPage7.Controls.Add(this.streak5);
+            this.tabPage7.Controls.Add(this.streak4);
+            this.tabPage7.Controls.Add(this.streak3);
             this.tabPage7.Controls.Add(this.button3);
             this.tabPage7.Controls.Add(this.button1);
             this.tabPage7.Controls.Add(this.btnStop);
@@ -412,11 +440,150 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(521, 244);
+            this.tabPage7.Size = new System.Drawing.Size(690, 244);
             this.tabPage7.TabIndex = 0;
             this.tabPage7.Text = "Stats";
             this.tabPage7.UseVisualStyleBackColor = true;
             this.tabPage7.Click += new System.EventHandler(this.tabPage7_Click);
+            // 
+            // streak14
+            // 
+            this.streak14.AutoSize = true;
+            this.streak14.Location = new System.Drawing.Point(576, 203);
+            this.streak14.Name = "streak14";
+            this.streak14.Size = new System.Drawing.Size(68, 13);
+            this.streak14.TabIndex = 54;
+            this.streak14.Text = "Above 130 : ";
+            // 
+            // streak1
+            // 
+            this.streak1.AutoSize = true;
+            this.streak1.Location = new System.Drawing.Point(545, 34);
+            this.streak1.Name = "streak1";
+            this.streak1.Size = new System.Drawing.Size(99, 13);
+            this.streak1.TabIndex = 53;
+            this.streak1.Text = "Streaks Below 10 : ";
+            this.streak1.Click += new System.EventHandler(this.streak1_Click);
+            // 
+            // streak13
+            // 
+            this.streak13.AutoSize = true;
+            this.streak13.Location = new System.Drawing.Point(576, 190);
+            this.streak13.Name = "streak13";
+            this.streak13.Size = new System.Drawing.Size(68, 13);
+            this.streak13.TabIndex = 52;
+            this.streak13.Text = "Above 120 : ";
+            // 
+            // streak2
+            // 
+            this.streak2.AutoSize = true;
+            this.streak2.Location = new System.Drawing.Point(543, 47);
+            this.streak2.Name = "streak2";
+            this.streak2.Size = new System.Drawing.Size(101, 13);
+            this.streak2.TabIndex = 51;
+            this.streak2.Text = "Streaks Above 10 : ";
+            // 
+            // streak12
+            // 
+            this.streak12.AutoSize = true;
+            this.streak12.Location = new System.Drawing.Point(576, 177);
+            this.streak12.Name = "streak12";
+            this.streak12.Size = new System.Drawing.Size(68, 13);
+            this.streak12.TabIndex = 50;
+            this.streak12.Text = "Above 110 : ";
+            // 
+            // streak11
+            // 
+            this.streak11.AutoSize = true;
+            this.streak11.Location = new System.Drawing.Point(576, 164);
+            this.streak11.Name = "streak11";
+            this.streak11.Size = new System.Drawing.Size(68, 13);
+            this.streak11.TabIndex = 49;
+            this.streak11.Text = "Above 100 : ";
+            // 
+            // streak10
+            // 
+            this.streak10.AutoSize = true;
+            this.streak10.Location = new System.Drawing.Point(582, 151);
+            this.streak10.Name = "streak10";
+            this.streak10.Size = new System.Drawing.Size(62, 13);
+            this.streak10.TabIndex = 48;
+            this.streak10.Text = "Above 90 : ";
+            // 
+            // streak9
+            // 
+            this.streak9.AutoSize = true;
+            this.streak9.Location = new System.Drawing.Point(582, 138);
+            this.streak9.Name = "streak9";
+            this.streak9.Size = new System.Drawing.Size(62, 13);
+            this.streak9.TabIndex = 47;
+            this.streak9.Text = "Above 80 : ";
+            // 
+            // streak8
+            // 
+            this.streak8.AutoSize = true;
+            this.streak8.Location = new System.Drawing.Point(582, 125);
+            this.streak8.Name = "streak8";
+            this.streak8.Size = new System.Drawing.Size(62, 13);
+            this.streak8.TabIndex = 46;
+            this.streak8.Text = "Above 70 : ";
+            // 
+            // streak7
+            // 
+            this.streak7.AutoSize = true;
+            this.streak7.Location = new System.Drawing.Point(582, 112);
+            this.streak7.Name = "streak7";
+            this.streak7.Size = new System.Drawing.Size(62, 13);
+            this.streak7.TabIndex = 45;
+            this.streak7.Text = "Above 60 : ";
+            // 
+            // streak6
+            // 
+            this.streak6.AutoSize = true;
+            this.streak6.Location = new System.Drawing.Point(582, 99);
+            this.streak6.Name = "streak6";
+            this.streak6.Size = new System.Drawing.Size(62, 13);
+            this.streak6.TabIndex = 44;
+            this.streak6.Text = "Above 50 : ";
+            // 
+            // streak5
+            // 
+            this.streak5.AutoSize = true;
+            this.streak5.Location = new System.Drawing.Point(582, 86);
+            this.streak5.Name = "streak5";
+            this.streak5.Size = new System.Drawing.Size(62, 13);
+            this.streak5.TabIndex = 43;
+            this.streak5.Text = "Above 40 : ";
+            // 
+            // streak4
+            // 
+            this.streak4.AutoSize = true;
+            this.streak4.Location = new System.Drawing.Point(582, 73);
+            this.streak4.Name = "streak4";
+            this.streak4.Size = new System.Drawing.Size(62, 13);
+            this.streak4.TabIndex = 42;
+            this.streak4.Text = "Above 30 : ";
+            // 
+            // streak3
+            // 
+            this.streak3.AutoSize = true;
+            this.streak3.Location = new System.Drawing.Point(582, 60);
+            this.streak3.Name = "streak3";
+            this.streak3.Size = new System.Drawing.Size(62, 13);
+            this.streak3.TabIndex = 41;
+            this.streak3.Text = "Above 20 : ";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Red;
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(338, 7);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(94, 23);
+            this.button3.TabIndex = 40;
+            this.button3.Text = "Slow Sim Off";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button1
             // 
@@ -487,7 +654,7 @@
             // lblWagered
             // 
             this.lblWagered.AutoSize = true;
-            this.lblWagered.Location = new System.Drawing.Point(369, 56);
+            this.lblWagered.Location = new System.Drawing.Point(354, 56);
             this.lblWagered.Name = "lblWagered";
             this.lblWagered.Size = new System.Drawing.Size(13, 13);
             this.lblWagered.TabIndex = 33;
@@ -496,7 +663,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(306, 56);
+            this.label2.Location = new System.Drawing.Point(291, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 32;
@@ -515,7 +682,7 @@
             // lblLuck
             // 
             this.lblLuck.AutoSize = true;
-            this.lblLuck.Location = new System.Drawing.Point(369, 144);
+            this.lblLuck.Location = new System.Drawing.Point(354, 144);
             this.lblLuck.Name = "lblLuck";
             this.lblLuck.Size = new System.Drawing.Size(0, 13);
             this.lblLuck.TabIndex = 30;
@@ -523,7 +690,7 @@
             // label69
             // 
             this.label69.AutoSize = true;
-            this.label69.Location = new System.Drawing.Point(329, 144);
+            this.label69.Location = new System.Drawing.Point(314, 144);
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(34, 13);
             this.label69.TabIndex = 29;
@@ -576,7 +743,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(265, 122);
+            this.label10.Location = new System.Drawing.Point(250, 122);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(98, 13);
             this.label10.TabIndex = 4;
@@ -611,7 +778,7 @@
             // lblProfpb
             // 
             this.lblProfpb.AutoSize = true;
-            this.lblProfpb.Location = new System.Drawing.Point(369, 165);
+            this.lblProfpb.Location = new System.Drawing.Point(354, 165);
             this.lblProfpb.Name = "lblProfpb";
             this.lblProfpb.Size = new System.Drawing.Size(0, 13);
             this.lblProfpb.TabIndex = 25;
@@ -628,7 +795,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(287, 165);
+            this.label1.Location = new System.Drawing.Point(272, 165);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 13);
             this.label1.TabIndex = 24;
@@ -638,7 +805,7 @@
             // 
             this.lblLoseStreak.AutoSize = true;
             this.lblLoseStreak.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblLoseStreak.Location = new System.Drawing.Point(369, 122);
+            this.lblLoseStreak.Location = new System.Drawing.Point(354, 122);
             this.lblLoseStreak.Name = "lblLoseStreak";
             this.lblLoseStreak.Size = new System.Drawing.Size(0, 13);
             this.lblLoseStreak.TabIndex = 9;
@@ -681,7 +848,7 @@
             // lblCustreak
             // 
             this.lblCustreak.AutoSize = true;
-            this.lblCustreak.Location = new System.Drawing.Point(369, 78);
+            this.lblCustreak.Location = new System.Drawing.Point(354, 78);
             this.lblCustreak.Name = "lblCustreak";
             this.lblCustreak.Size = new System.Drawing.Size(0, 13);
             this.lblCustreak.TabIndex = 21;
@@ -698,7 +865,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(285, 78);
+            this.label18.Location = new System.Drawing.Point(270, 78);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(78, 13);
             this.label18.TabIndex = 20;
@@ -724,7 +891,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(320, 100);
+            this.label15.Location = new System.Drawing.Point(305, 100);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(43, 13);
             this.label15.TabIndex = 14;
@@ -743,7 +910,7 @@
             // 
             this.lblLosses.AutoSize = true;
             this.lblLosses.ForeColor = System.Drawing.Color.Red;
-            this.lblLosses.Location = new System.Drawing.Point(369, 100);
+            this.lblLosses.Location = new System.Drawing.Point(354, 100);
             this.lblLosses.Name = "lblLosses";
             this.lblLosses.Size = new System.Drawing.Size(0, 13);
             this.lblLosses.TabIndex = 15;
@@ -774,26 +941,14 @@
             this.tcStats.Location = new System.Drawing.Point(0, 0);
             this.tcStats.Name = "tcStats";
             this.tcStats.SelectedIndex = 0;
-            this.tcStats.Size = new System.Drawing.Size(529, 270);
+            this.tcStats.Size = new System.Drawing.Size(698, 270);
             this.tcStats.TabIndex = 15;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(338, 6);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 23);
-            this.button3.TabIndex = 40;
-            this.button3.Text = "Slow Sim Off";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Stats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(529, 270);
+            this.ClientSize = new System.Drawing.Size(698, 270);
             this.Controls.Add(this.tcStats);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Stats";
@@ -878,5 +1033,19 @@
         public System.Windows.Forms.Button btnStart;
         public System.Windows.Forms.Button button1;
         public System.Windows.Forms.Button button3;
+        public System.Windows.Forms.Label streak14;
+        public System.Windows.Forms.Label streak1;
+        public System.Windows.Forms.Label streak13;
+        public System.Windows.Forms.Label streak2;
+        public System.Windows.Forms.Label streak12;
+        public System.Windows.Forms.Label streak11;
+        public System.Windows.Forms.Label streak10;
+        public System.Windows.Forms.Label streak9;
+        public System.Windows.Forms.Label streak8;
+        public System.Windows.Forms.Label streak7;
+        public System.Windows.Forms.Label streak6;
+        public System.Windows.Forms.Label streak5;
+        public System.Windows.Forms.Label streak4;
+        public System.Windows.Forms.Label streak3;
     }
 }
